@@ -59,6 +59,7 @@ PRODUCT_COPY_FILES += \
 
 # Prima wifi config
 PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/system/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
     $(COMMON_PATH)/rootdir/system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
 # QCOM Display
@@ -112,10 +113,6 @@ PRODUCT_PACKAGES += \
 # Media
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/system/etc/media_profiles.xml:system/etc/media_profiles.xml
-
-# Light
-PRODUCT_PACKAGES += \
-    lights.msm8974
 
 # WIFI MAC update
 PRODUCT_PACKAGES += \
@@ -205,6 +202,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.sensors.pedometer=false \
     ro.qualcomm.sensors.pam=false \
     ro.qualcomm.sensors.scrn_ortn=false
+
+# WFD
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0
+
+# HDMI
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.demo.hdmirotationlock=false
+
+# Time
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.timed.enable=true
 
 # VIDC debug_levels
 # 1:ERROR 2:HIGH 4:LOW 0:NOLOGS 7:AllLOGS
