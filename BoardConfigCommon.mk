@@ -16,8 +16,6 @@
 -include device/sony/common/BoardConfigCommon.mk
 
 # Graphics
-TARGET_USES_QCOM_BSP := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
 BOARD_EGL_CFG := device/sony/rhine-common/rootdir/system/lib/egl/egl.cfg
 
 # Shader cache config options
@@ -127,7 +125,7 @@ QCOM_AUDIO_FEATURE_DISABLED_MULTICHANNELS := true
 COMMON_GLOBAL_CFLAGS += -DDOLBY_DAP -DQCOM_DS1_DOLBY_DAP
 
 # Display
-TARGET_QCOM_DISPLAY_VARIANT := caf
+TARGET_QCOM_DISPLAY_VARIANT := mdss
 
 # Media
 TARGET_QCOM_MEDIA_VARIANT := v4l2
