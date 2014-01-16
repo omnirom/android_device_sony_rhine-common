@@ -221,3 +221,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Include non-opensource parts
 $(call inherit-product, vendor/sony/rhine-common/rhine-common-vendor.mk)
+
+#New MSM8x74 hw repo
+$(call inherit-product-if-exists, hardware/qcom/msm8x74/msm8x74.mk)
