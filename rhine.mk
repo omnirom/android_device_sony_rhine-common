@@ -162,7 +162,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio offload
 PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.buffer.size.kb=32 \
-    audio.offload.gapless.enabled=false \
+    audio.offload.gapless.enabled=true \
     av.offload.enable=true
 
 # Enable AAC 5.1 output
@@ -170,7 +170,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true
 
 # Voice Call
-PRODUCT_PACKAGES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.fluencetype=none \
     persist.audio.dualmic.config=endfire \
     persist.audio.fluence.voicecall=true \
