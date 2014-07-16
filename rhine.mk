@@ -15,7 +15,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # qcom common
-$(call inherit-product, device/sony/qcom-common/qcom-common.mk)
+$(call inherit-product, device/sony/qcom-common/qcom-common-330.mk)
 
 COMMON_PATH := device/sony/rhine-common
 
@@ -72,6 +72,10 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     libaudio-resampler \
     tinymix
+
+# Camera
+PRODUCT_PACKAGES += \
+    camera.qcom
 
 # Display
 PRODUCT_PACKAGES += \
