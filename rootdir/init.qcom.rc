@@ -381,7 +381,7 @@ on charger
     write /sys/devices/system/cpu/cpu1/online 0
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
-    start mpdecision
+    # start mpdecision
 
 on property:service.bootanim.exit=1
     # Enable Power modes and set the CPU Freq Sampling rates
@@ -698,7 +698,7 @@ on property:sys.perf.profile=0
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "conservative"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "conservative"
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
-    start mpdecision
+    # start mpdecision
 
 # Balanced
 on property:sys.perf.profile=1
@@ -718,7 +718,7 @@ on property:sys.perf.profile=1
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "interactive"
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
-    start mpdecision
+    # start mpdecision
 
 # High performance
 on property:sys.perf.profile=2
