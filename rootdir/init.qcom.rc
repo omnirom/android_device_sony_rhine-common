@@ -195,6 +195,10 @@ on boot
     chmod 400 /sys/class/graphics/fb1/msm_fb_fps_level
     chmod 400 /sys/class/graphics/fb2/msm_fb_fps_level
 
+    # Dynamic fps
+    chmod 644 /sys/devices/virtual/graphics/fb0/dynamic_fps
+    chown system graphics /sys/devices/virtual/graphics/fb0/dynamic_fps
+
     # For bridgemgr daemon to inform the USB driver of the correct transport
     chown radio radio /sys/class/android_usb/f_rmnet_smd_sdio/transport
 
