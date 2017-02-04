@@ -12,11 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Platform path
+PLATFORM_COMMON_PATH := device/sony/rhine-common
+
 $(call inherit-product, device/sony/common/common_omni.mk)
 
 SOMC_PLATFORM := rhine
 
-SONY_ROOT := device/sony/rhine-common/rootdir
+SONY_ROOT := $(PLATFORM_COMMON_PATH)/rootdir
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -28,10 +31,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(SONY_ROOT)/system/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
-
-# Qualcom BT
-PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
 
 # IDC
 PRODUCT_COPY_FILES += \
@@ -47,7 +46,8 @@ PRODUCT_COPY_FILES += \
 
 # Device Specific Hardware
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml
+    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml
 
 # Platform Init
 PRODUCT_PACKAGES += \
@@ -90,7 +90,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Qualcom FMRadio
 PRODUCT_PACKAGES += \
-    qcom.fmradio \
     FMRadio
 
 # Telephony Packages (AOSP)
